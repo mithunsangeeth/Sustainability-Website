@@ -1,179 +1,202 @@
 /*
-    Author: Mithun Sangeeth
-    Date: 03/09/2025
-    Description: CSS styles for Sustainable Living website
+  Author: [Your Name]
+  Date: [Date]
+  Description: CSS for Sustainable Living website
 */
 
-/* Global Styles */
+/* RESET & BASE STYLES */
 * {
     box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
-    padding: 0;
-}
-
-body {
     font-size: 16px;
     line-height: 1.5;
     font-family: Verdana, sans-serif;
     background-color: #f5f5f5;
-}
-
-/* Layout Adjustments */
-header, nav ul, #content-wrapper {
+  }
+  
+  /* HEADER: White background, black text, horizontal rule at bottom */
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Links */
-a {
-    color: #008000;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Logo Positioning */
-#logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-header {
-    position: relative;
-    background-color: #008000;
-    padding: 15px 0;
-    text-align: center;
-}
-
-header h1 {
-    color: white;
+    padding: 10px 0;
+  }
+  
+  /* BRANDING: Flex container for logo + site title */
+  #branding {
+    display: flex;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 42px;
+    height: 100px;
+    margin-right: 10px; /* spacing between logo and title */
+  }
+  
+  #branding h1 {
+    color: #000;
     margin: 0;
     font-size: 24px;
-}
-
-/* Navigation */
-nav {
+  }
+  
+  /* NAV: Green bar with white links */
+  nav {
     background-color: #008000;
-    padding: 10px;
-}
-
-nav ul {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
+  }
+  
+  nav ul li {
+    margin: 0;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px;
-}
-
-nav ul li a:hover {
-    background-color: black;
-    color: #9ae39a;
-}
-
-/* Main Content Layout */
-#content-wrapper {
+  }
+  
+  nav ul li a:hover {
+    background-color: #006400; /* Darker green on hover */
+  }
+  
+  /* CONTENT WRAPPER: aside on the left, main on the right */
+  #content-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    background: white;
+    background-color: #fff;
     padding: 20px;
-}
-
-/* Sidebar */
-aside {
+  }
+  
+  /* ASIDE (left column) */
+  aside {
     background-color: #ccc;
     padding: 15px;
     flex: 1;
-}
-
-aside section {
-    background-color: white;
-    border: 1px solid #008000;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-aside h3 {
-    background-color: #008000;
-    color: white;
-    padding: 0.5rem;
-    margin: 0;
+    margin-right: 20px;
+  }
+  
+  /* Main sidebar heading: black text, bold, dotted underline */
+  aside h2 {
+    color: #000;
+    font-size: 1.3rem;
     font-weight: bold;
-}
-
-aside a {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border-bottom: 2px dotted #000;
+  }
+  
+  /* Each subsection (Resources, Infrastructure, Materials) */
+  aside section {
+    background-color: #fff;
+    border: 1px solid #008000;
+    margin-bottom: 1rem;
+  }
+  
+  /* Subsection headings: green bar with white text */
+  aside h3 {
+    background-color: #008000;
+    color: #fff;
+    margin: 0;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Links inside each subsection: black text, no underline unless hover */
+  aside a {
     display: block;
     padding: 0.5rem;
-}
-
-/* Main Content */
-main {
-    flex: 4;
-    padding-left: 20px;
-}
-
-/* Feature Section Layout */
-section {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  aside a:hover {
+    text-decoration: underline;
+  }
+  
+  /* MAIN (right column) */
+  main {
+    flex: 3;
+  }
+  
+  /* ARTICLE */
+  article {
+    margin-bottom: 20px;
+  }
+  
+  /* FLOAT IMAGE LEFT IN ARTICLE */
+  .float-left {
+    float: left;
+    margin: 0 20px 20px 0;
+    border: 3px double #333;
+    max-width: 350px;
+    height: auto;
+  }
+  
+  /* FEATURE SECTIONS (Rain, Compost, Solar) */
+  section {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 20px;
-}
-
-/* Feature Box Styling */
-.feature-box {
-    background-color: #e7f7e7;
-    border: 1px solid #008000;
-    border-radius: 10px;
+    gap: 20px;
     text-align: center;
+    padding: 20px 0;
+  }
+  
+  section div {
+    background-color: #e7f7e7;
+    border: 2px solid #008000;
+    border-radius: 10px;
+    flex: 1;
+    max-width: 300px;
     padding: 15px;
-    width: 30%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Feature Title */
-.feature-box h2 {
+  }
+  
+  section div h2 {
     background-color: #008000;
-    color: white;
+    color: #fff;
     border-radius: 10px 10px 0 0;
     margin: -15px -15px 15px -15px;
     padding: 10px;
     font-weight: bold;
-    text-align: center;
-}
-
-/* Feature Image */
-.feature-box img {
-    width: 100%;
-    max-width: 250px;
+  }
+  
+  section div img {
     border: 3px double #333;
     display: block;
     margin: 0 auto;
-}
-
-/* Feature Link */
-.feature-box a {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  section div a {
     display: block;
     margin-top: 10px;
     color: #008000;
     font-weight: bold;
     text-decoration: none;
-}
-
-.feature-box a:hover {
+  }
+  
+  section div a:hover {
     text-decoration: underline;
-}
+  }
+  
